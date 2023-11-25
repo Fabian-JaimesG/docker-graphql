@@ -34,16 +34,15 @@ jobs:
         NEW_VERSION: ${{ steps.version.outputs.version }}
 
       run: |
-        echo $NEW_VERSION
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     
-    # - name: Build Docker image
-    #   run: |
-    #     docker build -t fabianjaimes/docker-graphql:$NEW_VERSION .
-    #     docker build -t fabianjaimes/docker-graphql:latest .
+    - name: Build Docker image
+      run: |
+        docker build -t fabianjaimes/docker-graphql:$NEW_VERSION .
+        docker build -t fabianjaimes/docker-graphql:latest .
 
-    # - name: Push Docker image
-    #   run: |
-    #     docker push fabianjaimes/docker-graphql:$NEW_VERSION
-    #     docker push fabianjaimes/docker-graphql:latest
+    - name: Push Docker image
+      run: |
+        docker push fabianjaimes/docker-graphql:$NEW_VERSION
+        docker push fabianjaimes/docker-graphql:latest
     
