@@ -24,7 +24,7 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     
-    - name: Build Docker image:
+    - name: Build Docker image
       run: |
         docker build -t ${{ DOCKER-NAME-IMAGE }}:0.0.2 .
 
