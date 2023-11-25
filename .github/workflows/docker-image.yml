@@ -26,9 +26,9 @@ jobs:
     
     - name: Build Docker image
       run: |
-        docker build -t ${{ DOCKER-NAME-IMAGE }}:0.0.2 .
+        docker build -t fabianjaimes/docker-graphql:0.0.2 .
 
     - name: Push Docker image
       run: |
-        docker push ${{ DOCKER-NAME-IMAGE }}:0.0.2 .
+        docker push fabianjaimes/docker-graphql:0.0.2 .
     
